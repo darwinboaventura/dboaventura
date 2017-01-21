@@ -1,11 +1,12 @@
 module.exports = function(app) {
-	var Page = app.models.page;
+	var Contact = app.models.contact;
 	var Controller = {};
 	var sanitize = require('mongo-sanitize');
 
+	// Methods
 	Controller.list = function(req, res) {
-		Page.find().exec().then(function(Pages) {
-			res.json(Pages);
+		Contact.find().exec().then(function(contacts) {
+			res.json(contacts);
 		}, function(error) {
 			console.error(error);
 			res.status(500).json(error);
@@ -15,10 +16,10 @@ module.exports = function(app) {
 	Controller.get = function(req, res) {
 		var id = sanitize(req.params.id);
 
-		Page.findById(id).exec().then(function(Page) {
-			if (!Page) throw new Error("Nenhuma página encontrada com esse ID");
+		Contact.findById(id).exec().then(function(contact) {
+			if (!Contact) throw new Error("Nenhuma trabalho encontrada com esse ID");
 
-			res.json(Page);
+			res.json(contact);
 		}, function(error) {
 			console.log(error);
 			res.status(404).json(error);
@@ -28,7 +29,7 @@ module.exports = function(app) {
 	Controller.remove = function(req, res) {
 		var id = sanitize(req.params.id);
 
-		Page.remove({"_id": id}).exec().then(function(){
+		Contact.remove({"_id": id}).exec().then(function(){
 			res.status(204).end();
 		}, function(error) {
 			return console.error(error);
@@ -39,12 +40,14 @@ module.exports = function(app) {
 		var id = sanitize(req.body._id);
 
 		var data = {
-			title: req.body.title,
-			text: req.body.text
+			name: req.body.name,
+			email: req.body.email,
+			phone: req.body.phone,
+			message: req.body.message
 		};
 
 		if (id) {
-			Page.findByIdAndUpdate(id, data).exec().then(function(Page) {
+			Contact.findByIdAndUpdate(id, data).exec().then(function(contact) {
 				data._id = id;
 				res.json(data);
 			}, function(error) {
@@ -52,8 +55,8 @@ module.exports = function(app) {
 				res.status(500).json(error);
 			});
 		} else {
-			Page.create(data).then(function(Page) {
-				res.status(201).json(Page);
+			Contact.create(data).then(function(contact) {
+				res.status(201).json(contact);
 			}, function(error) {
 				console.log(error);
 				res.status(500).json(error);

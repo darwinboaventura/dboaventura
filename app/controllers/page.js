@@ -1,5 +1,5 @@
 module.exports = function(app) {
-	var Contact = app.models.contact;
+	var Contact = app.models.page;
 	var Controller = {};
 	var sanitize = require('mongo-sanitize');
 
@@ -45,7 +45,8 @@ module.exports = function(app) {
 
 		if (id) {
 			Contact.findByIdAndUpdate(id, data).exec().then(function(contact) {
-				res.json(contact);
+				data._id = id;
+				res.json(data);
 			}, function(error) {
 				console.error(error);
 				res.status(500).json(error);

@@ -1,6 +1,6 @@
 module.exports = function(app) {
 	var Controller = app.controllers.page;
-	var Auth = app.controllers.auth;
+	var Auth = app.services.auth;
 
 	app.route('/page')
 		.get(Controller.list)

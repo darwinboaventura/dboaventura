@@ -7,6 +7,7 @@ var passport = require('passport');
 var helmet = require('helmet');
 
 module.exports = function() {
+	var flash = require('connect-flash');
 	var app = express();
 	var load = require('express-load');
 
@@ -24,6 +25,7 @@ module.exports = function() {
 		resave: true,
 		saveUninitialized: true
 	}));
+	app.use(flash());
 	app.use(passport.initialize());
 	app.use(passport.session());
 	app.use(helmet());
@@ -37,6 +39,7 @@ module.exports = function() {
 	app.use(express.static('./public'));
 
 	load('models', {cwd: 'app'})
+		.then('services')
 		.then('controllers')
 		.then('routes')
 		.into(app);

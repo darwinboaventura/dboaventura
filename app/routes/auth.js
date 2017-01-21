@@ -1,10 +1,12 @@
 var passport = require('passport');
 
 module.exports = function(app) {
-	app.post('/auth/login', passport.authenticate('local', { failureRedirect: '/login' }));
+	app.post('/auth/login', passport.authenticate('local', { failureFlash: true }), function(req, res) {
+		res.status(200).send('Authorized');
+	});
 
 	app.get('/auth/logout', function(req, res) {
 		req.logOut();
-		res.redirect('/');
+		res.send('O usuário foi desconectado');
 	});
 };

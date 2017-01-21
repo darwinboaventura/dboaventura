@@ -1,0 +1,178 @@
+doctype html
+html(lang="en")
+	head
+		meta(charset="utf-8")
+		meta(name="viewport", content="width=device-width, initial-scale=1")
+
+		title Darwin Boaventura - Full Stack Web Developer
+
+		// font awesome
+		<script src="https://use.fontawesome.com/8712517925.js"></script>
+
+		// favicon
+		link(rel="shortcut icon", href="dist/imgs/favicon.ico")
+
+		// animate css
+		link(rel="stylesheet", href="dist/css/animate/animate.css")
+
+		// google fonts
+		link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Open+Sans:400,800,800italic,600")
+
+		link(rel="stylesheet", href="dist/css/style.css")
+		link(rel="stylesheet", href="dist/css/responsive.css", media="(max-width: 900px)")
+
+	body
+		section#main-home.clearfix
+			div.box-wrapper.clearfix
+				div.box-brand.clearfix.wow.fadeInDown(data-wow-duration="1s")
+					span D
+					span B
+
+				div.wow.fadeInUp(data-wow-duration="1s" data-wow-delay="1s")
+					h1.it-name darwin boaventura
+
+					h2.it-profession Full Stack Web Developer
+
+				a.it-link.wow.fadeInUp(data-wow-duration="1s" data-wow-delay="2s" href="#about")
+					span About me
+
+					i.fa.fa-angle-down
+
+			a.it-menu.wow.fadeIn(data-wow-duration="1s" data-wow-delay="3s" href="#")
+				i.fa.fa-bars
+
+		section#about.clearfix
+			div.wrapper.clearfix
+				header.clearfix
+					h2 <span>02</span> ABOUT ME
+
+				article.clearfix
+					p I'm a self-taught professional, passionate about the Internet and technology. I've professionally programmed websites and web based systems with 6 years experience.
+
+					p I'm a Full Stack Web Developer proficient in CodeIgniter and other popular PHP based Frameworks. I also love to learn new technologies and am able to quickly apply my skill set to address your business needs.
+
+					p I have developed projects for brands like Navy of Brazil, Asserf, Unidade Digital, GBarbosa, Pida!, Banda Seu Maxixe, Cangaia de Jegue, One Models Bahia, Clínica Clivale and Grupo A2.
+
+					p I am competent working with HTML, CSS, Jade, SASS, Bootstrap, Foundation, Javascript, jQuery, AngularJS, WordPress, OpenCart, MySQL, PHP, MySQL, Git, Gulp, Bower, CodeIgniter, responsive layouts, Photoshop, Premiere and other software used in related areas.
+
+		section#works.clearfix
+			header.clearfix
+				div.wrapper.clearfix
+					h2 <span>02</span> LAST WORKS
+
+			ul.box-gallery.clearfix
+				li.li.clearfix
+					div.it-image.clearfix
+						img(src="dist/imgs/work-1.jpg", alt="Unidade Digital")
+
+					div.it-hover.animated.clearfix
+						div.box-center.clearfix
+							a(href="http://unidadedigital.com.br/#/" target="_blank")
+								h3 Unidade Digital
+
+								p HTML - CSS - jQuery- AngularJS
+
+				li.li.clearfix
+					div.it-image.clearfix
+						img(src="dist/imgs/work-2.jpg", alt="Digital Health")
+
+					div.it-hover.animated.clearfix
+						div.box-center.clearfix
+							a(href="http://dh.aplicativosa2.com.br", target="_blank")
+								h3 Digital Health
+
+								p HTML - CSS - jQuery - PHP (CodeIgniter) - MySQL
+
+				li.li.clearfix
+					div.it-image.clearfix
+						img(src="dist/imgs/work-3.jpg", alt="Navy of Brazil")
+
+					div.it-hover.animated.clearfix
+						div.box-center.clearfix
+							h3 Navy of Brazil
+
+							p HTML - CSS - jQuery - PHP (Drupal) - MySQL
+
+				li.li.clearfix
+					div.it-image.clearfix
+						img(src="dist/imgs/work-4.jpg", alt="Grupo A2")
+
+					div.it-hover.animated.clearfix
+						div.box-center.clearfix
+							a(href="http://www.grupoa2.com.br", target="_blank")
+								h3 Grupo A2
+
+								p HTML - CSS - jQuery - PHP (WordPress) - MySQL
+
+				li.li.clearfix
+					div.it-image.clearfix
+						img(src="dist/imgs/work-5.jpg", alt="Sabor Congelado")
+
+					div.it-hover.animated.clearfix
+						div.box-center.clearfix
+							a(href="http://www.saborcongelado.com.br", target="_blank")
+								h3 Sabor Congelado (E-commerce)
+
+								p HTML - CSS - jQuery - PHP (OpenCart) - MySQL
+
+				li.li.clearfix
+					div.it-image.clearfix
+						img(src="dist/imgs/work-6.jpg", alt="Unidade Digital")
+
+					div.it-hover.animated.clearfix
+						div.box-center.clearfix
+							h3 Modern Agency
+
+							p HTML - CSS - jQuery - AngularJS - PHP (API) - MySQL
+
+		section#contact.clearfix
+			div.wrapper.clearfix
+				header.clearfix
+					h2 <span>03</span> CONTACT
+
+				main.clearfix
+					form.clearfix
+						fieldset.clearfix
+							input(type="text", placeholder="Name", name="name", required)
+
+						fieldset.clearfix
+							input(type="email", placeholder="Email", name="email", required)
+
+						fieldset.clearfix
+							input(type="text", placeholder="Phone", name="phone")
+
+						fieldset.clearfix
+							textarea(placeholder="Message", name="message", required)
+
+						input(type="submit", value="Send")
+
+					aside.clearfix
+						p <strong>Email address</strong> <br /> darwinboaventura@gmail.com
+
+						p <strong>Phone</strong> <br /> +55 (11) 95334-7974
+
+		nav#menu.clearfix.animated
+			ul.clearfix
+				li.clearfix
+					a(href="#main-home") Home
+
+				li.clearfix
+					a(href="#about") About
+
+				li.clearfix
+					a(href="#works") Portfolio
+
+				li.clearfix
+					a(href="#contact") Contact
+
+			a.it-link-close(href="#")
+				i.fa.fa-times
+
+		// jquery
+		script(src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.3/jquery.min.js")
+
+		// wow.js
+		script(src="dist/js/wow/wow.min.js")
+
+		// app
+		script(src="dist/js/app.js")

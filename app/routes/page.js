@@ -1,11 +1,12 @@
 module.exports = function(app) {
 	var Controller = app.controllers.page;
+	var Auth = app.controllers.auth;
 
 	app.route('/page')
 		.get(Controller.list)
-		.post(Controller.save);
+		.post(Auth.isAuthenticated, Controller.save);
 
 	app.route('/page/:id')
 		.get(Controller.get)
-		.delete(Controller.remove);
+		.delete(Auth.isAuthenticated, Controller.remove);
 };

@@ -31,9 +31,7 @@
 			</h2>
 		</header>
 
-		<article class="clearfix">
-			{{page.text}}
-		</article>
+		<article class="clearfix" ng-bind-html="page.text"></article>
 	</div>
 </section>
 
@@ -47,7 +45,7 @@
 	</header>
 
 	<ul class="box-gallery clearfix">
-		<li class="li clearfix" ng-repeat="work in works">
+		<li class="li clearfix hover-work" ng-repeat="work in works">
 			<div class="it-image clearfix">
 				<img ng-src="{{work.thumbnail}}" alt="{{work.title}}">
 			</div>

@@ -1,5 +1,5 @@
 angular.module('dboaventura').controller('HomeController', function($scope, PageService, WorkService) {
-	PageService.get({id: "5882a1ff36d2f9784cf03124"}, function(page) {
+	PageService.get({id: "588552b8650d2265ef1fd5e5"}, function(page) {
 		$scope.page = page;
 	});
 

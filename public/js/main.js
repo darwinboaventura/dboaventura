@@ -1,4 +1,4 @@
-angular.module('dboaventura', ['ngRoute', 'ngResource'])
+angular.module('dboaventura', ['ngRoute', 'ngResource', 'ngSanitize'])
 .config(function($routeProvider) {
 	$routeProvider
 		.when('/', {

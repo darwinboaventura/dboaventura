@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="dboaventura">
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -22,9 +22,7 @@
 	</head>
 
 	<body>
-		<div ng-app="dboaventura">
-			<ng-view></ng-view>
-		</div>
+		<ng-view></ng-view>
 
 		<!-- jquery-->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.3/jquery.min.js"></script>
@@ -46,6 +44,10 @@
 		<!-- services -->
 		<script src="js/services/PageService.js"></script>
 		<script src="js/services/WorkService.js"></script>
+
+		<!-- directives -->
+		<script src="js/directives/SmoothScrollDirective.js"></script>
+		<script src="js/directives/ToggleMenuDirective.js"></script>
 
 		<!-- controllers -->
 		<script src="js/controllers/HomeController.js"></script>

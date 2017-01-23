@@ -72,24 +72,28 @@
 		</header>
 
 		<main class="clearfix">
-			<form class="clearfix">
+			<form class="clearfix" ng-submit="processContactForm()">
 				<fieldset class="clearfix">
-					<input type="text" placeholder="Name" name="name" required>
+					<input type="text" placeholder="Name" name="name" ng-model="contact.name" required>
 				</fieldset>
 
 				<fieldset class="clearfix">
-					<input type="email" placeholder="Email" name="email" required>
+					<input type="email" placeholder="Email" name="email" ng-model="contact.email" required>
 				</fieldset>
 
 				<fieldset class="clearfix">
-					<input type="text" placeholder="Phone" name="phone">
+					<input type="text" placeholder="Phone" name="phone" ng-model="contact.phone">
 				</fieldset>
 
 				<fieldset class="clearfix">
-					<textarea placeholder="Message" name="message" required></textarea>
+					<textarea placeholder="Message" name="message" ng-model="contact.message" required></textarea>
 				</fieldset>
 
 				<input type="submit" value="Send">
+
+				<div class="clearfix"></div>
+
+				<span class="flash-message" ng-show="flashMessage">{{flashMessage.message}}</span>
 			</form>
 
 			<aside class="clearfix">

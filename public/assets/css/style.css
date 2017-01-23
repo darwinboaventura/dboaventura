@@ -46,6 +46,13 @@ table {
   border-spacing: 0;
 }
 
+input:required, textarea:required {
+    box-shadow:none;
+}
+input:invalid, textarea:required {
+    box-shadow:none;
+}
+
 * {
   font-family: 'Open Sans', sans-serif;
   line-height: 1em;
@@ -361,6 +368,16 @@ table {
 
 #contact main aside p:first-child {
   margin-top: 0;
+}
+
+#contact .flash-message {
+	padding: 15px;
+	margin-top: 20px;
+	border: 1px solid transparent;
+	color: #fff;
+	border-color: #fff;
+	display: block;
+	text-align: center;
 }
 
 #menu {

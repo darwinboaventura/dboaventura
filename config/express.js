@@ -12,7 +12,7 @@ module.exports = function() {
 	var load = require('express-load');
 
 	// variável de ambiente
-	app.set('port', 3000);
+	app.set('port', process.env.PORT || 3000);
 	app.set('view engine', 'ejs');
 	app.set('views', './app/views');
 	app.use(bodyParser.urlencoded({extended: true}));

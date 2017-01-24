@@ -46,8 +46,6 @@
 		<script src="js/services/PageService.js"></script>
 		<script src="js/services/WorkService.js"></script>
 		<script src="js/services/ContactService.js"></script>
-		<script src="js/services/InterceptorService.js"></script>
-		<script src="js/services/AdminService.js"></script>
 
 		<!-- directives -->
 		<script src="js/directives/SmoothScrollDirective.js"></script>
@@ -56,7 +54,5 @@
 
 		<!-- controllers -->
 		<script src="js/controllers/HomeController.js"></script>
-		<script src="js/controllers/LoginController.js"></script>
-		<script src="js/controllers/HomeAdminController.js"></script>
 	</body>
 </html>

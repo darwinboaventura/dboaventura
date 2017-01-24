@@ -1,10 +1,17 @@
 angular.module('dboaventura').factory('AdminService', function($http) {
 	return {
 		login: function(data) {
-			$http.post("/auth/login", data).then(function(sucesso) {
-				return sucesso;
-			}, function(error) {
-				return error;
+			return $http.post('/auth/login', data).then(function(response) {
+				return response;
+			}, function(response) {
+				return response;
+			});
+		},
+		logout: function() {
+			return $http.get('/auth/logout').then(function(response) {
+				return response;
+			}, function(response) {
+				return response;
 			});
 		}
 	};

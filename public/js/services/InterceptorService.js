@@ -2,7 +2,7 @@ angular.module('dboaventura').factory('InterceptorService', function($location, 
 	return {
 		responseError: function(res) {
 			if (res.status == 401) {
-				$location.path('/#/admin/login');
+				$location.path('/admin/login');
 			}
 
 			return $q.reject(res);

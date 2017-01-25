@@ -33,7 +33,25 @@ angular.module('dboaventura', ['ngRoute', 'ngResource', 'ngSanitize'])
 			}
 		})
 		.when('/admin/works', {
-			templateUrl: 'partials/admin/works.html',
+			templateUrl: 'partials/admin/works/show.html',
+			controller: 'WorkAdminController',
+			resolve: {
+				access: function(AuthService) {
+					return AuthService.isAuthenticated();
+				}
+			}
+		})
+		.when('/admin/works/new', {
+			templateUrl: 'partials/admin/works/new.html',
+			controller: 'WorkAdminController',
+			resolve: {
+				access: function(AuthService) {
+					return AuthService.isAuthenticated();
+				}
+			}
+		})
+		.when('/admin/works/edit/:id', {
+			templateUrl: 'partials/admin/works/edit.html',
 			controller: 'WorkAdminController',
 			resolve: {
 				access: function(AuthService) {

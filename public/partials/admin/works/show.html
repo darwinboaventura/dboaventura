@@ -1,6 +1,14 @@
 <ng-include src="'partials/admin/includes/header.html'"></ng-include>
 
 <div class="container">
+	<div class="row">
+		<div class="col-md-12">
+			<a ng-href="#/admin/works/new" class="btn btn-primary pull-right">Adicionar novo</a>
+		</div>
+	</div>
+
+	<br /> <br />
+
 	<table class="table table-bordered">
 		<tbody></tbody>
 
@@ -13,15 +21,15 @@
 		</thead>
 
 		<tbody>
-			<tr ng-repeat="page in pages">
-				<td>{{page.title}}</td>
+			<tr ng-repeat="work in works">
+				<td>{{work.title}}</td>
 
 				<td>
-					<a ng-href="#/admin/pages/edit/{{page._id}}">Editar</a>
+					<a ng-href="#/admin/works/edit/{{work._id}}">Editar</a>
 				</td>
 
 				<td>
-					<a ng-click="remove(page._id)">Excluir</a>
+					<a ng-click="remove(work._id)">Excluir</a>
 				</td>
 			</tr>
 		</tbody>

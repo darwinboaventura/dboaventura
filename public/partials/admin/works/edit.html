@@ -7,23 +7,35 @@
 		</li>
 
 		<li>
-			<a ng-href="#/admin/pages">Pages</a>
+			<a ng-href="#/admin/works">Works</a>
 		</li>
 
-		<li class="active">{{page.title}}</li>
+		<li class="active">{{work.title}}</li>
 	</ol>
 
-	<form ng-submit="update()">
+	<form ng-submit="save()">
 		<div class="form-group">
 			<label>Título</label>
 
-			<input type="text" class="form-control" ng-model="page.title" required>
+			<input type="text" class="form-control" ng-model="work.title" required>
 		</div>
 
 		<div class="form-group">
-			<label>Text</label>
+			<label>Tecnologias</label>
 
-			<textarea ng-model="page.text" class="form-control" style="height: 400px;" required></textarea>
+			<input type="text" class="form-control" ng-model="work.technologies" required>
+		</div>
+
+		<div class="form-group">
+			<label>Thumbnail</label>
+
+			<input type="text" class="form-control" ng-model="work.thumbnail" required>
+		</div>
+
+		<div class="form-group">
+			<label>link</label>
+
+			<input type="text" class="form-control" ng-model="work.link">
 		</div>
 
 		<input class="btn btn-default" type="submit" value="Alterar">

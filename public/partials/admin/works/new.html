@@ -1,0 +1,49 @@
+<ng-include src="'partials/admin/includes/header.html'"></ng-include>
+
+<div class="container">
+	<ol class="breadcrumb">
+		<li>
+			<a ng-href="#/admin">Home</a>
+		</li>
+
+		<li>
+			<a ng-href="#/admin/works">Works</a>
+		</li>
+
+		<li class="active">{{work.title}}</li>
+	</ol>
+
+	<form ng-submit="save()">
+		<div class="form-group">
+			<label>Título</label>
+
+			<input type="text" class="form-control" ng-model="work.title" required>
+		</div>
+
+		<div class="form-group">
+			<label>Tecnologias</label>
+
+			<input type="text" class="form-control" ng-model="work.technologies" required>
+		</div>
+
+		<div class="form-group">
+			<label>Thumbnail</label>
+
+			<input type="text" class="form-control" ng-model="work.thumbnail" required>
+		</div>
+
+		<div class="form-group">
+			<label>link</label>
+
+			<input type="text" class="form-control" ng-model="work.link">
+		</div>
+
+		<input class="btn btn-default" type="submit" value="Adicionar">
+	</form>
+
+	<br /> <br />
+
+	<div class="alert alert-danger" ng-show="flashMessage.type == 'error'" role="alert" ng-bind-html="flashMessage.message"></div>
+
+	<div class="alert alert-success" ng-show="flashMessage.type == 'success'" role="alert" ng-bind-html="flashMessage.message"></div>
+</div>

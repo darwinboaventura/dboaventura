@@ -1,7 +1,5 @@
 angular.module('dboaventura', ['ngRoute', 'ngResource', 'ngSanitize'])
 .config(function($routeProvider, $httpProvider) {
-	$httpProvider.interceptors.push('InterceptorService');
-
 	$routeProvider
 		.when('/', {
 			templateUrl: 'partials/home.html',
@@ -9,7 +7,12 @@ angular.module('dboaventura', ['ngRoute', 'ngResource', 'ngSanitize'])
 		})
 		.when('/admin', {
 			templateUrl: 'partials/admin/index.html',
-			controller: 'HomeAdminController'
+			controller: 'HomeAdminController',
+			resolve: {
+				access: function(AuthService) {
+					return AuthService.isAuthenticated();
+				}
+			}
 		})
 		.when('/admin/login', {
 			templateUrl: 'partials/admin/login.html',
@@ -21,4 +24,18 @@ angular.module('dboaventura', ['ngRoute', 'ngResource', 'ngSanitize'])
 		.otherwise({
 			redirectTo: '/'
 		});
+})
+.run(function ($rootScope, $location) {
+	$rootScope.$on("$routeChangeError", function (event, current, previous, rejection) {
+		switch (rejection) {
+			case 401:
+				$location.path('/admin/login');
+			break;
+
+			default:
+				$log.warn("$stateChangeError event catched");
+			break;
+		}
+	});
+
 });

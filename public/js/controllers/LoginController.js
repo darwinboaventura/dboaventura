@@ -6,6 +6,8 @@ angular.module('dboaventura').controller('LoginController', function($scope, Adm
 			if (response.status == 401) {
 				$location.path('/admin/login');
 			} else if (response.status == 200) {
+				window.localStorage.setItem('user', response.data);
+
 				$location.path('/admin');
 			}
 		});
@@ -18,6 +20,7 @@ angular.module('dboaventura').controller('LoginController', function($scope, Adm
 				console.log('Um erro ocorreu, não foi possível efeturar o logout.');
 				$location.path('/admin');
 			} else if (response.status == 200) {
+				window.localStorage.removeItem('user');
 				$location.path('/admin/login');
 			}
 		}, function(response) {

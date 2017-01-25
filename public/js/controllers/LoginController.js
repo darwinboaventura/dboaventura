@@ -4,7 +4,7 @@ angular.module('dboaventura').controller('LoginController', function($scope, Adm
 	$scope.makeLogin = function() {
 		AdminService.login($scope.admin).then(function(response) {
 			if (response.status == 401) {
-				$location.path('/admin/login');
+				$scope.message = "Login e/ou senha incorretos";
 			} else if (response.status == 200) {
 				window.localStorage.setItem('user', response.data);
 

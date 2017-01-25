@@ -1,21 +1,34 @@
-<h1>Login page</h1>
+<!-- bootstrap -->
+<link rel="stylesheet" href="vendor/bootstrap/dist/css/bootstrap.css">
+<link rel="stylesheet" href="vendor/bootstrap/dist/css/bootstrap-theme.css">
 
-<form ng-submit="makeLogin()">
-	<fieldset>
-		<label>Login</label>
+<div class="container">
+	<h1 class="text-center">dboaventura - login</h1>
 
-		<input type="text" ng-model="admin.username" placeholder="Login" required />
-	</fieldset>
+	<br />
+	<br />
+	<br />
+	<br />
 
-	<fieldset>
-		<label>Senha</label>
+	<form ng-submit="makeLogin()" class="col-md-4 col-md-offset-4">
+		<fieldset class="form-group">
+			<label>Login</label>
 
-		<input type="password" ng-model="admin.password" placeholder="Senha" required />
-	</fieldset>
+			<input type="text" class="form-control" ng-model="admin.username" placeholder="Login" required />
+		</fieldset>
 
-	<fieldset>
-		<input type="submit" value="Entrar">
-	</fieldset>
-</form>
+		<fieldset class="form-group">
+			<label>Senha</label>
 
-<div ng-show="message">{{message}}</div>
+			<input type="password" class="form-control" ng-model="admin.password" placeholder="Senha" required />
+		</fieldset>
+
+		<fieldset>
+			<input type="submit" class="btn btn-default" value="Entrar">
+		</fieldset>
+
+		<br /> <br />
+
+		<div ng-show="message" class="alert alert-danger" role="alert">{{message}}</div>
+	</form>
+</div>

@@ -1,0 +1,29 @@
+<ng-include src="'partials/admin/includes/header.html'"></ng-include>
+
+<div class="container">
+	<table class="table table-bordered">
+		<tbody></tbody>
+
+		<thead>
+			<tr>
+				<th>Title</th>
+				<th>Action #1</th>
+				<th>Action #2</th>
+			</tr>
+		</thead>
+
+		<tbody>
+			<tr ng-repeat="page in pages">
+				<td>{{page.title}}</td>
+
+				<td>
+					<a ng-href="#/admin/pages/edit/{{page._id}}">Editar</a>
+				</td>
+
+				<td>
+					<a ng-click="removePage(page._id)">Excluir</a>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>

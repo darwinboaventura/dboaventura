@@ -14,10 +14,47 @@ angular.module('dboaventura', ['ngRoute', 'ngResource', 'ngSanitize'])
 				}
 			}
 		})
+		.when('/admin/pages', {
+			templateUrl: 'partials/admin/pages/show.html',
+			controller: 'PageAdminController',
+			resolve: {
+				access: function(AuthService) {
+					return AuthService.isAuthenticated();
+				}
+			}
+		})
+		.when('/admin/pages/edit/:id', {
+			templateUrl: 'partials/admin/pages/edit.html',
+			controller: 'PageAdminController',
+			resolve: {
+				access: function(AuthService) {
+					return AuthService.isAuthenticated();
+				}
+			}
+		})
+		.when('/admin/works', {
+			templateUrl: 'partials/admin/works.html',
+			controller: 'WorkAdminController',
+			resolve: {
+				access: function(AuthService) {
+					return AuthService.isAuthenticated();
+				}
+			}
+		})
+		.when('/admin/contact', {
+			templateUrl: 'partials/admin/contacts.html',
+			controller: 'ContactAdminController',
+			resolve: {
+				access: function(AuthService) {
+					return AuthService.isAuthenticated();
+				}
+			}
+		})
 		.when('/admin/login', {
 			templateUrl: 'partials/admin/login.html',
 			controller: 'LoginController'
-		}).when('/admin/logout', {
+		})
+		.when('/admin/logout', {
 			templateUrl: 'partials/admin/login.html',
 			controller: 'LoginController'
 		})

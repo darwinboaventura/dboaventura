@@ -1,0 +1,24 @@
+<ng-include src="'partials/admin/includes/header.html'"></ng-include>
+
+<div class="container">
+	<table class="table table-bordered">
+		<tbody></tbody>
+
+		<thead>
+			<tr>
+				<th>Title</th>
+				<th>Action #1</th>
+			</tr>
+		</thead>
+
+		<tbody>
+			<tr ng-repeat="contact in contacts">
+				<td>{{contact.title}}</td>
+
+				<td>
+					<a ng-href="#/admin/pages/edit/{{contact._id}}">Editar</a>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>

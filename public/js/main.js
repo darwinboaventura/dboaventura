@@ -60,7 +60,7 @@ angular.module('dboaventura', ['ngRoute', 'ngResource', 'ngSanitize'])
 			}
 		})
 		.when('/admin/contact', {
-			templateUrl: 'partials/admin/contacts.html',
+			templateUrl: 'partials/admin/contacts/show.html',
 			controller: 'ContactAdminController',
 			resolve: {
 				access: function(AuthService) {

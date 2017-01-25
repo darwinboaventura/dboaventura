@@ -1,4 +1,4 @@
-angular.module('dboaventura').controller('WorkAdminController', function($scope, WorkService, $routeParams, $location) {
+angular.module('dboaventura').controller('WorkAdminController', function($scope, WorkService, $routeParams) {
 	// Home Works
 	WorkService.query(function(works) {
 		$scope.works = works;

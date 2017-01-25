@@ -1,4 +1,4 @@
-angular.module('dboaventura').controller('PageAdminController', function($scope, PageService, $routeParams, $location) {
+angular.module('dboaventura').controller('PageAdminController', function($scope, PageService, $routeParams) {
 	// Home Pages
 	PageService.query(function(pages) {
 		$scope.pages = pages;

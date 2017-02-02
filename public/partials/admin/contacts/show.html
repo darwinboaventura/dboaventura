@@ -7,16 +7,19 @@
 		<thead>
 			<tr>
 				<th>Title</th>
+				<th>Read ?</th>
 				<th>Action #1</th>
 			</tr>
 		</thead>
 
 		<tbody>
 			<tr ng-repeat="contact in contacts">
-				<td>{{contact.title}}</td>
+				<td>{{contact.name}}</td>
+
+				<td>No</td>
 
 				<td>
-					<a ng-href="#/admin/pages/edit/{{contact._id}}">Editar</a>
+					<a ng-href="#/admin/contact/edit/{{contact._id}}">Editar</a>
 				</td>
 			</tr>
 		</tbody>

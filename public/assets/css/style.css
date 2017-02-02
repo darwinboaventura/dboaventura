@@ -283,6 +283,7 @@ input:invalid, textarea:required {
 #contact {
   padding: 70px 0;
   background: url("../imgs/bg-contact.jpg") no-repeat center top;
+  background-size: cover;
 }
 
 #contact header {

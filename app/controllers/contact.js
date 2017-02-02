@@ -2,6 +2,7 @@ module.exports = function(app) {
 	var Contact = app.models.contact;
 	var Controller = {};
 	var sanitize = require('mongo-sanitize');
+	var nodemailer = require('nodemailer');
 
 	// Methods
 	Controller.list = function(req, res) {
@@ -49,7 +50,37 @@ module.exports = function(app) {
 		if (id) {
 			Contact.findByIdAndUpdate(id, data).exec().then(function(contact) {
 				data._id = id;
-				res.json(data);
+
+				var transporter = nodemailer.createTransport({
+			        service: 'Gmail',
+			        auth: {
+			            user: 'darwinboaventura@gmail.com', // Your email id
+			            pass: '@9ihwsmttma' // Your password
+			        }
+			    });
+
+			    var emailMessage = '<strong>Nome: </strong> ' + data.name + '<br />';
+			    emailMessage += '<strong>E-mail: </strong> ' + data.email + '<br />';
+			    emailMessage += '<strong>Telefone: </strong> ' + data.phone + '<br />';
+			    emailMessage += '<strong>Mensagem: </strong> ' + data.message + '<br />';
+
+				var mailOptions = {
+					from: 'darwinboaventura@gmail.com', // sender address
+					to: 'darwinboaventura@gmail.com', // list of receivers
+					subject: 'Novo Contato - dboaventura portfólio', // Subject line
+					html: emailMessage
+				};
+
+				transporter.sendMail(mailOptions, function(error, info) {
+				    if(error){
+				        console.log(error);
+				        res.json({yo: 'error'});
+				    }else{
+				        console.log('Message sent: ' + info.response);
+				    };
+				});
+
+			    res.json(data);
 			}, function(error) {
 				console.error(error);
 				res.status(500).json(error);

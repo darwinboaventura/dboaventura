@@ -1,0 +1,91 @@
+.wrapper {
+  padding: 0 15px;
+}
+
+#main-home .box-wrapper .box-brand {
+  width: auto;
+  padding: 20px;
+}
+
+#main-home .box-wrapper .box-brand span {
+  font-size: 40px;
+}
+
+#main-home .box-wrapper .box-brand span:nth-child(2n) {
+  margin-top: 1px;
+  margin-left: 0;
+}
+
+#main-home .box-wrapper .it-name {
+  font-size: 40px;
+  letter-spacing: -3px;
+}
+
+#main-home .box-wrapper .it-profession {
+  font-size: 18px;
+  margin-bottom: 40px;
+}
+
+#main-home .it-menu {
+  font-size: 30px;
+  top: 10px;
+  right: 10px;
+}
+
+#about article p {
+  text-align: center;
+}
+
+#works .box-gallery li {
+  width: 100%;
+  border-top: 2px solid #fff;
+}
+
+#works .box-gallery li:first-child {
+  border-top: none;
+}
+
+#works .box-gallery li .it-hover {
+  display: block;
+}
+
+#works .box-gallery li .it-hover .box-center {
+  padding: 0 20px;
+}
+
+#works .box-gallery li .it-hover .box-center p {
+  line-height: 1.5em;
+}
+
+#contact {
+  background-color: #292827;
+  background-position: center bottom;
+}
+
+#contact main {
+  padding: 0;
+}
+
+#contact main form {
+  width: 100%;
+}
+
+#contact main form input[type="submit"] {
+  width: 100%;
+}
+
+#contact main aside {
+  width: 100%;
+  display: table;
+  margin-top: 40px;
+}
+
+#contact main aside p {
+  text-align: center;
+}
+
+#menu .it-link-close {
+  font-size: 30px;
+  top: 10px;
+  right: 10px;
+}

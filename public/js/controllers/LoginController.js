@@ -6,7 +6,7 @@ angular.module('dboaventura').controller('LoginController', function($scope, Adm
 			if (response.status == 401) {
 				$scope.message = "Login e/ou senha incorretos";
 			} else if (response.status == 200) {
-				window.localStorage.setItem('user', response.data);
+				window.sessionStorage.setItem('user', response.data);
 
 				$location.path('/admin');
 			}
@@ -20,7 +20,7 @@ angular.module('dboaventura').controller('LoginController', function($scope, Adm
 				console.log('Um erro ocorreu, não foi possível efeturar o logout.');
 				$location.path('/admin');
 			} else if (response.status == 200) {
-				window.localStorage.removeItem('user');
+				window.sessionStorage.removeItem('user');
 				$location.path('/admin/login');
 			}
 		}, function(response) {

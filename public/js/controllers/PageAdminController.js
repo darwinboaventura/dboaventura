@@ -23,12 +23,14 @@ angular.module('dboaventura').controller('PageAdminController', function($scope,
 		});
 	}
 
-	$scope.save = function() {
+	$scope.update = function() {
 		PageService.save($scope.page, function(success) {
 			$scope.flashMessage = {
 				type: 'success',
 				message: 'A página foi atualizada com sucesso'
 			};
+
+			console.log(success);
 		}, function(error) {
 			$scope.flashMessage = {
 				type: 'error',

@@ -46,6 +46,23 @@ module.exports = function(app) {
 			message: req.body.message
 		};
 
+		app.mailer.send('email', {
+			to: 'darwinboaventura@gmail.com', // REQUIRED. This can be a comma delimited string just like a normal email to field.
+			subject: 'Novo Contato - dboaventura portfólio', // REQUIRED.
+			otherProperty: data // All additional properties are also passed to the template as local variables.
+		}, function (err) {
+			if (err) {
+			// handle error
+				console.log(err);
+
+				res.send('There was an error sending the email');
+
+				return;
+			}
+
+			console.log("Email sent!");
+		});
+
 		if (id) {
 			Contact.findByIdAndUpdate(id, data).exec().then(function(contact) {
 				data._id = id;

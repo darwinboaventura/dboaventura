@@ -5,6 +5,7 @@ var cookieParser = require('cookie-parser');
 var session = require('express-session');
 var passport = require('passport');
 var helmet = require('helmet');
+var mailer = require('express-mailer');
 
 module.exports = function() {
 	var flash = require('connect-flash');
@@ -34,6 +35,18 @@ module.exports = function() {
 	app.use(helmet.xssFilter());
 	app.use(helmet.nosniff());
 	app.disable('x-powered-by');
+
+	mailer.extend(app, {
+		from: 'no-reply@dboaventura.com',
+		host: 'smtp.gmail.com', // hostname
+		secureConnection: true, // use SSL
+		port: 465, // port for secure SMTP
+		transportMethod: 'SMTP', // default is SMTP. Accepts anything that nodemailer accepts
+		auth: {
+		user: 'darwinboaventura@gmail.com',
+		pass: process.env.smtpPassword
+		}
+	});
 
 	// middleware
 	app.use(express.static('./public'));

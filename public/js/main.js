@@ -1,5 +1,7 @@
 angular.module('dboaventura', ['ngRoute', 'ngResource', 'ngSanitize', 'textAngular'])
 .config(function($routeProvider, $httpProvider) {
+	$httpProvider.interceptors.push('UnauthorazedInterceptor');
+
 	$routeProvider
 		.when('/', {
 			templateUrl: 'partials/home.html',

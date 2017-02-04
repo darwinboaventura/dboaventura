@@ -68,6 +68,15 @@ angular.module('dboaventura', ['ngRoute', 'ngResource', 'ngSanitize', 'textAngul
 				}
 			}
 		})
+		.when('/admin/contact/edit/:id', {
+			templateUrl: 'partials/admin/contacts/edit.html',
+			controller: 'ContactAdminController',
+			resolve: {
+				access: function(AuthService) {
+					return AuthService.isAuthenticated();
+				}
+			}
+		})
 		.when('/admin/login', {
 			templateUrl: 'partials/admin/login.html',
 			controller: 'LoginController'

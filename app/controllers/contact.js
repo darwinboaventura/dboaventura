@@ -43,25 +43,9 @@ module.exports = function(app) {
 			name: req.body.name,
 			email: req.body.email,
 			phone: req.body.phone,
-			message: req.body.message
+			message: req.body.message,
+			seen: req.body.seen
 		};
-
-		app.mailer.send('email', {
-			to: 'darwinboaventura@gmail.com', // REQUIRED. This can be a comma delimited string just like a normal email to field.
-			subject: 'Novo Contato - dboaventura portfólio', // REQUIRED.
-			otherProperty: data // All additional properties are also passed to the template as local variables.
-		}, function (err) {
-			if (err) {
-			// handle error
-				console.log(err);
-
-				res.send('There was an error sending the email');
-
-				return;
-			}
-
-			console.log("Email sent!");
-		});
 
 		if (id) {
 			Contact.findByIdAndUpdate(id, data).exec().then(function(contact) {
@@ -74,6 +58,23 @@ module.exports = function(app) {
 			});
 		} else {
 			Contact.create(data).then(function(contact) {
+				app.mailer.send('email', {
+					to: 'darwinboaventura@gmail.com', // REQUIRED. This can be a comma delimited string just like a normal email to field.
+					subject: 'Novo Contato - dboaventura portfólio', // REQUIRED.
+					otherProperty: data // All additional properties are also passed to the template as local variables.
+				}, function (err) {
+					if (err) {
+					// handle error
+						console.log(err);
+
+						res.send('There was an error sending the email');
+
+						return;
+					}
+
+					console.log("Email sent!");
+				});
+
 				res.status(201).json(contact);
 			}, function(error) {
 				console.log(error);

@@ -1,0 +1,41 @@
+<ng-include src="'partials/admin/includes/header.html'"></ng-include>
+
+<div class="container">
+	<ol class="breadcrumb">
+		<li>
+			<a ng-href="#/admin">Home</a>
+		</li>
+
+		<li>
+			<a ng-href="#/admin/contact">Contacts</a>
+		</li>
+
+		<li class="active">{{contact.name}}</li>
+	</ol>
+
+	<div>
+		<div class="form-group">
+			<label>Nome</label>
+
+			<p>{{contact.name}}</p>
+		</div>
+
+		<div class="form-group">
+			<label>E-mail</label>
+
+			<p>{{contact.email}}</p>
+		</div>
+
+		<div class="form-group">
+			<label>Telefone</label>
+
+			<p>{{contact.phone}}</p>
+		</div>
+
+		<div class="form-group">
+			<label>Mensagem</label>
+
+			<p>{{contact.message}}</p>
+		</div>
+	</div>
+</div>

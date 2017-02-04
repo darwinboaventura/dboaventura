@@ -6,3 +6,4 @@ dist/
 dist/*
 ./tmp
 ./tmp/*
+nodemon.json

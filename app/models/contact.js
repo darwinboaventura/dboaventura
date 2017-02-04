@@ -16,6 +16,11 @@ module.exports = function() {
 		message: {
 			type: String,
 			required: true
+		},
+		seen: {
+			type: Number,
+			required: true,
+			default: 0
 		}
 	});
 

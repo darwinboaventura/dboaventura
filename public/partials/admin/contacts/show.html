@@ -16,10 +16,11 @@
 			<tr ng-repeat="contact in contacts">
 				<td>{{contact.name}}</td>
 
-				<td>No</td>
+				<td ng-show="contact.seen == 0">Não lido</td>
+				<td ng-show="contact.seen == 1">Lido</td>
 
 				<td>
-					<a ng-href="#/admin/contact/edit/{{contact._id}}">Editar</a>
+					<a ng-href="#/admin/contact/edit/{{contact._id}}">Ler</a>
 				</td>
 			</tr>
 		</tbody>

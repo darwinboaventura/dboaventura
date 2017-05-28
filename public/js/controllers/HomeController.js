@@ -11,14 +11,14 @@ angular.module('dboaventura').controller('HomeController', function($scope, Page
 		ContactService.save($scope.contact, function() {
 			$scope.flashMessage = {
 				type: 'success',
-				message: 'Sua mensagem foi enviada com sucesso'
+				message: 'Your message was sent! I\'ll reach you back as soon as possible.'
 			};
 
 			$scope.contact = {};
 		}, function(error) {
 			$scope.flashMessage = {
 				type: 'error',
-				message: 'Não foi possível enviar sua mensagem, tente novamente.'
+				message: 'Erro, please try again.'
 			};
 
 			console.log(error);

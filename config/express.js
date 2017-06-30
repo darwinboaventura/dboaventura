@@ -37,7 +37,7 @@ module.exports = function() {
 	app.disable('x-powered-by');
 
 	mailer.extend(app, {
-		from: 'no-reply@dboaventura.com',
+		from: 'darwinboaventura@gmail.com',
 		host: 'smtp.gmail.com', // hostname
 		secureConnection: true, // use SSL
 		port: 465, // port for secure SMTP
